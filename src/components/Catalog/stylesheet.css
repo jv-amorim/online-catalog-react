@@ -1,0 +1,42 @@
+header {
+    background-color: royalblue;
+    padding: 5px 0px 5px 0px;
+    height: 30px;
+}
+
+header .title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+#shopping-cart {
+    background-color: rgb(25, 64, 182);
+    border: none;
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#shopping-cart:hover {
+    background-color: rgb(13, 45, 143);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.subtitle {
+    margin: 15px 0px 0px 20px;
+    color: #202020;
+    font-weight: 300;
+}
+
+#products-container {
+    padding: 20px 20px 0px 20px; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
