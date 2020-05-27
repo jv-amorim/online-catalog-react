@@ -1,0 +1,11 @@
+
+[
+  { "name": "Donut (unidade)", "price": 2.99, "imagePath": "/products-img/donut.jpg" },
+  { "name": "Cola-Cola (350ml)", "price": 3.49, "imagePath": "/products-img/coca-cola.jpg" },
+  { "name": "Sucrilhos (1kg)", "price": 9.99, "imagePath": "/products-img/sucrilhos.jpg" },
+  { "name": "Vinho (1L)", "price": 19.99, "imagePath": "/products-img/vine.jpg" },
+  { "name": "Maçã (kg)", "price": 3.99, "imagePath": "/products-img/apple.png" },
+  { "name": "Melancia (kg)", "price": 3.99, "imagePath": "/products-img/watermelon.jpg" },
+  { "name": "Presunto (kg)", "price": 10.99, "imagePath": "/products-img/ham.jpg" },
+  { "name": "Queijo (kg)", "price": 19.99, "imagePath": "/products-img/cheese.jpg" }
+]

@@ -11,7 +11,7 @@ header .title {
     color: white;
 }
 
-#shopping-cart {
+#shopping-cart-button {
     background-color: rgb(25, 64, 182);
     border: none;
     width: 50px;
@@ -21,7 +21,7 @@ header .title {
     right: 0px;
 }
 
-#shopping-cart:hover {
+#shopping-cart-button:hover {
     background-color: rgb(13, 45, 143);
     cursor: pointer;
     transition: 0.5s;
@@ -39,4 +39,31 @@ header .title {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+
+#cart-access-container {
+    margin: 20px 0px 0px 20px;
+}
+
+#cart-access-button {
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(25, 64, 182);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    font-size: large;
+    width: 220px;
+}
+
+#cart-access-button:hover {
+    background-color: rgb(13, 45, 143);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#cart-access-button .icon {
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
 }
