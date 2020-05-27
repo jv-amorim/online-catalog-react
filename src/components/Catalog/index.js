@@ -19,18 +19,26 @@ function CatalogHeader(props) {
 class Catalog extends React.Component {
     constructor(props) {
         super(props);
-        this.products = productsData;
         this.state = {
-            amount: Array(productsData.length).fill(0)
+            products: productsData.map((product) => ({ ...product, amount: 0 }))
         };
     }
     
-    handleClick(i) {
-        const newValues = this.state.amount.slice();
-        newValues[i]++;
-
+    increaseProductAmount(i) {
+        const products = this.state.products;
+        products[i].amount++;
+       
         this.setState({
-            amount: newValues
+            products: products
+        });
+    }
+    
+    decreaseProductAmount(i) {
+        const products = this.state.products;
+        products[i].amount--;
+       
+        this.setState({
+            products: products
         });
     }
     
@@ -46,13 +54,11 @@ class Catalog extends React.Component {
                 <div>
                     <p className="subtitle">Olá! Selecione os produtos desejados:</p>
                     <div id="products-container">
-                        {this.products.map((product, i) => (
-                            <Product key={i}
-                                name = {product.name} 
-                                price = {product.price} 
-                                imagePath = {product.imagePath} 
-                                amount = {this.state.amount[i]} 
-                                onClick = {() => this.handleClick(i)}
+                        {this.state.products.map((product, i) => (
+                            <Product 
+                                key={i}
+                                product={product} 
+                                onClick = {() => this.increaseProductAmount(i)}
                             />
                         ))}
                     </div>
@@ -63,7 +69,10 @@ class Catalog extends React.Component {
                         </button>
                     </div>
                 </div>
-                <Cart />
+                <Cart 
+                    products={this.state.products} 
+                    increaseMethod={this.increaseProductAmount}     
+                />
             </>
         );
     }

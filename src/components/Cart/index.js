@@ -3,22 +3,30 @@ import './stylesheet.css';
 import { XCircle, Trash, PlusCircle, MinusCircle } from 'react-feather';
 import { FaWhatsapp } from 'react-icons/fa'
 
-function CartItem(props) {
+function CartItem({ key, product, increaseMethod, decreaseMethod }) {
     return (
         <tr className="cart-item">
             <td>
-                <p className="cart-item-name">Batata</p>
+                <p className="cart-item-name">{product.name}</p>
             </td>
             <td>
-                0
+                {product.amount}
             </td>
             <td>
-                0
+                R$ {(product.amount * product.price).toLocaleString({currency: "BRL"})}
             </td>
             <td>
                 <div className="cart-item-buttons">
-                    <PlusCircle className="cart-button" width={20} />
-                    <MinusCircle className="cart-button" width={20} />
+                    <PlusCircle 
+                        className="cart-button" 
+                        width={20} 
+                        onClick={() => increaseMethod(key)}
+                    />
+                    <MinusCircle 
+                        className="cart-button" 
+                        width={20} 
+                        onClick={() => decreaseMethod(key)}
+                    />
                     <Trash className="cart-button" width={20} />
                 </div>
             </td>
@@ -27,7 +35,14 @@ function CartItem(props) {
 }
 
 class Cart extends React.Component {
-   closeCart() {
+    constructor(props) {
+        super(props);
+        this.products = props.products;
+        this.increaseMethod = props.increaseMethod;
+        this.decreaseMethod = props.decreaseMethod;
+    }
+    
+    closeCart() {
         const cartElement = document.getElementById('cart-panel');
         cartElement.style.display = "none";
     }
@@ -48,13 +63,30 @@ class Cart extends React.Component {
                                 <th>Preço</th>
                                 <th>Ações</th>
                             </tr>
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
+                            {this.products.map((product, i) => {
+                                if (product.amount > 0) {
+                                    return (
+                                        <CartItem 
+                                            key={i}
+                                            product={product} 
+                                            increaseMethod={this.increaseMethod} 
+                                            decreaseMethod={this.decreaseMethod} 
+                                        />
+                                    );
+                                }
+                                return "";
+                            })}
+                            <tr>
+                                <td>
+                                    <b>Total</b>
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td className="total-price">
+                                    R$ 0,00
+                                </td>
+                            </tr>
                         </table>
                     </div>
                     <div id="whatsapp-container">
