@@ -23,6 +23,8 @@ function CreateWhatsAppMessageFromProducts(products) {
                 + ': R$ ' 
                 + (product.amount * product.price)
                 .toLocaleString({currency: 'BRL'}) 
+                + ' (' 
+                + product.amount + ' unid.)'
                 + ' | ';
         }
     }
