@@ -1,8 +1,8 @@
 {
-  "homepage": "http://estudiohaus.github.io/onlinecatalogprototype",
-  "name": "online-catalog",
+  "homepage": "https://estudiohaus.github.io/onlinecatalogprototype/",
+  "name": "onlinecatalogprototype",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
