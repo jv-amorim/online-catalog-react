@@ -15,8 +15,8 @@
 Um simples prótotipo de um catálogo online.  Criado com React.
 
 <p align="center">
-  <img alt="Catalog-Desktop-01" src="github_img/Catalog-Desktop-01.png">
-  <img alt="Catalog-Desktop-02" src="github_img/Catalog-Desktop-02.png">
-  <img alt="Catalog-Mobile-01" src="github_img/Catalog-Mobile-01.png">
-  <img alt="Catalog-Mobile-02" src="github_img/Catalog-Mobile-02.png">
+  <img alt="Catalog-Desktop-01" src="https://github.com/estudiohaus/onlinecatalogprototype/blob/master/github-img/Catalog-Desktop-01.png" width="100%">
+  <img alt="Catalog-Desktop-02" src="https://github.com/estudiohaus/onlinecatalogprototype/blob/master/github-img/Catalog-Desktop-02.png" width="100%">
+  <img alt="Catalog-Mobile-01" src="https://github.com/estudiohaus/onlinecatalogprototype/blob/master/github-img/Catalog-Mobile-01.png" width="25%">
+  <img alt="Catalog-Mobile-02" src="https://github.com/estudiohaus/onlinecatalogprototype/blob/master/github-img/Catalog-Mobile-02.png" width="25%">
 </p>
