@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/onlinecatalogprototype/static/css/main.1d7463da.chunk.css",
+    "main.css": "/onlinecatalogprototype/static/css/main.dd8624ff.chunk.css",
     "main.js": "/onlinecatalogprototype/static/js/main.cb373a94.chunk.js",
     "main.js.map": "/onlinecatalogprototype/static/js/main.cb373a94.chunk.js.map",
     "runtime-main.js": "/onlinecatalogprototype/static/js/runtime-main.aa080e50.js",
@@ -8,15 +8,15 @@
     "static/js/2.aa1df5a1.chunk.js": "/onlinecatalogprototype/static/js/2.aa1df5a1.chunk.js",
     "static/js/2.aa1df5a1.chunk.js.map": "/onlinecatalogprototype/static/js/2.aa1df5a1.chunk.js.map",
     "index.html": "/onlinecatalogprototype/index.html",
-    "precache-manifest.60e50f2ed9422a349f79c40330702253.js": "/onlinecatalogprototype/precache-manifest.60e50f2ed9422a349f79c40330702253.js",
+    "precache-manifest.4d6e8a2d97e23ac70963d5a4a7aa6b44.js": "/onlinecatalogprototype/precache-manifest.4d6e8a2d97e23ac70963d5a4a7aa6b44.js",
     "service-worker.js": "/onlinecatalogprototype/service-worker.js",
-    "static/css/main.1d7463da.chunk.css.map": "/onlinecatalogprototype/static/css/main.1d7463da.chunk.css.map",
+    "static/css/main.dd8624ff.chunk.css.map": "/onlinecatalogprototype/static/css/main.dd8624ff.chunk.css.map",
     "static/js/2.aa1df5a1.chunk.js.LICENSE.txt": "/onlinecatalogprototype/static/js/2.aa1df5a1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.aa080e50.js",
     "static/js/2.aa1df5a1.chunk.js",
-    "static/css/main.1d7463da.chunk.css",
+    "static/css/main.dd8624ff.chunk.css",
     "static/js/main.cb373a94.chunk.js"
   ]
 }
