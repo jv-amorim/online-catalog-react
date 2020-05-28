@@ -2,7 +2,7 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 function SendProductsByWhatsApp(products) {
-    const phoneNumber = '5538988484205';
+    const phoneNumber = '5538991404533';
     const encodedMessage = encodeURI(CreateWhatsAppMessageFromProducts(products));
 
     const link = 'https://wa.me/' + phoneNumber + '?text=' + encodedMessage;
