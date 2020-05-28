@@ -73,7 +73,8 @@
 }
 
 #whatsapp-button {
-    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    padding: 10px 40px 10px 10px;
     background-color: rgb(25, 182, 46);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     border: none;
@@ -81,6 +82,7 @@
     color: white;
     font-size: large;
     width: 200px;
+    position: relative;
 }
 
 #whatsapp-button:hover {
@@ -90,6 +92,7 @@
 }
 
 #whatsapp-button .icon {
-    float: right;
-    margin-right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 7px;
 }

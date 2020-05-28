@@ -1,20 +1,11 @@
 import React from 'react';
-import Product from '../Product';
-import Cart from '../Cart';
-import productsData from '../../data/products.json';
-import { ShoppingCart } from 'react-feather';
-import './stylesheet.css';
 
-function CatalogHeader(props) {
-    return (
-        <header>
-            <h1 className="title">Catálogo Online</h1>
-            <button id="shopping-cart-button" onClick={props.onClick}>
-                <ShoppingCart color="white" size={20} />
-            </button>
-        </header>
-    );
-}
+import Cart from '../Cart';
+import CatalogHeader from '../CatalogHeader';
+import CatalogBody from '../CatalogBody';
+
+import productsData from '../../data/products.json';
+import './stylesheet.css';
 
 class Catalog extends React.Component {
     constructor(props) {
@@ -24,7 +15,7 @@ class Catalog extends React.Component {
         };
     }
     
-    increaseProductAmount(i) {
+    increaseProductAmount = (i) => {
         const products = this.state.products;
         products[i].amount++;
        
@@ -33,7 +24,7 @@ class Catalog extends React.Component {
         });
     }
     
-    decreaseProductAmount(i) {
+    decreaseProductAmount = (i) => {
         const products = this.state.products;
         products[i].amount--;
        
@@ -42,7 +33,7 @@ class Catalog extends React.Component {
         });
     }
     
-    handleOpenCart() {
+    handleOpenCart = () => {
         const cart = document.getElementById('cart-panel');
         cart.style.display = "block";
     }
@@ -51,27 +42,15 @@ class Catalog extends React.Component {
         return (
             <>
                 <CatalogHeader onClick={this.handleOpenCart} />
-                <div>
-                    <p className="subtitle">Olá! Selecione os produtos desejados:</p>
-                    <div id="products-container">
-                        {this.state.products.map((product, i) => (
-                            <Product 
-                                key={i}
-                                product={product} 
-                                onClick = {() => this.increaseProductAmount(i)}
-                            />
-                        ))}
-                    </div>
-                    <div id="cart-access-container">
-                        <button id="cart-access-button" onClick={this.handleOpenCart}>
-                            Acessar o carrinho
-                            <ShoppingCart color="white" size={20} className="icon" />
-                        </button>
-                    </div>
-                </div>
+                <CatalogBody 
+                    products={this.state.products} 
+                    increaseMethod={this.increaseProductAmount} 
+                    openCartMethod={this.handleOpenCart}
+                />
                 <Cart 
                     products={this.state.products} 
                     increaseMethod={this.increaseProductAmount}     
+                    decreaseMethod={this.decreaseProductAmount}     
                 />
             </>
         );

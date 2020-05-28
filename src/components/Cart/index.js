@@ -1,38 +1,10 @@
 import React from 'react';
-import './stylesheet.css';
-import { XCircle, Trash, PlusCircle, MinusCircle } from 'react-feather';
-import { FaWhatsapp } from 'react-icons/fa'
 
-function CartItem({ key, product, increaseMethod, decreaseMethod }) {
-    return (
-        <tr className="cart-item">
-            <td>
-                <p className="cart-item-name">{product.name}</p>
-            </td>
-            <td>
-                {product.amount}
-            </td>
-            <td>
-                R$ {(product.amount * product.price).toLocaleString({currency: "BRL"})}
-            </td>
-            <td>
-                <div className="cart-item-buttons">
-                    <PlusCircle 
-                        className="cart-button" 
-                        width={20} 
-                        onClick={() => increaseMethod(key)}
-                    />
-                    <MinusCircle 
-                        className="cart-button" 
-                        width={20} 
-                        onClick={() => decreaseMethod(key)}
-                    />
-                    <Trash className="cart-button" width={20} />
-                </div>
-            </td>
-        </tr>
-    );
-}
+import CartItem from '../CartItem';
+import WhatsAppButton from '../WhatsAppButton'
+
+import { XCircle } from 'react-feather';
+import './stylesheet.css';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -57,44 +29,45 @@ class Cart extends React.Component {
                     </div>
                     <div id="cart-items">
                         <table>
-                            <tr>
-                                <th>Produto</th>
-                                <th>Quant.</th>
-                                <th>Preço</th>
-                                <th>Ações</th>
-                            </tr>
-                            {this.products.map((product, i) => {
-                                if (product.amount > 0) {
-                                    return (
-                                        <CartItem 
-                                            key={i}
-                                            product={product} 
-                                            increaseMethod={this.increaseMethod} 
-                                            decreaseMethod={this.decreaseMethod} 
-                                        />
-                                    );
-                                }
-                                return "";
-                            })}
-                            <tr>
-                                <td>
-                                    <b>Total</b>
-                                </td>
-                                <td>
-                                    0
-                                </td>
-                                <td className="total-price">
-                                    R$ 0,00
-                                </td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Quant.</th>
+                                    <th>Preço</th>
+                                    <th>Ações</th>
+                                </tr>
+                                {this.products.map((product, i) => {
+                                    if (product.amount > 0) {
+                                        return (
+                                            <CartItem 
+                                                key={i}
+                                                productId={i}
+                                                product={product} 
+                                                increaseMethod={this.increaseMethod} 
+                                                decreaseMethod={this.decreaseMethod} 
+                                            />
+                                        );
+                                    }
+                                    return null;
+                                })}
+                                <tr>
+                                    <td><b>Total</b></td>
+                                    <td>
+                                        {this.products.reduce((total, next) => {
+                                            return total + next.amount;
+                                        }, 0)}
+                                    </td>
+                                    <td className="total-price">
+                                        R$ {this.products.reduce((total, next) => {
+                                            return total + (next.price * next.amount);
+                                        }, 0)
+                                        .toLocaleString({currency: "BRL"})}
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
-                    <div id="whatsapp-container">
-                        <button id="whatsapp-button">
-                            Enviar o pedido 
-                            <FaWhatsapp color="white" size={25} className="icon" />
-                        </button>
-                    </div>
+                    <WhatsAppButton products={this.products} />
                 </div>
             </div>
         );
