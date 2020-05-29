@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CartItem from '../CartItem';
-import WhatsAppButton from '../WhatsAppButton'
+import CartItem from './CartItem';
+import WhatsAppButton from './WhatsAppButton'
 
 import { XCircle } from 'react-feather';
 import './stylesheet.css';
@@ -24,11 +24,17 @@ class Cart extends React.Component {
             <div id="cart-panel">
                 <div id="cart-content">
                     <div id="cart-header">
-                        <XCircle className="cart-button" onClick={this.closeCart} />
+                        <XCircle className="close-button" onClick={this.closeCart} />
                         <h1>Carrinho</h1>
                     </div>
                     <div id="cart-items">
                         <table>
+                            <colgroup>
+                                <col span="1" style={{width: '30%'}}/>
+                                <col span="1" style={{width: '15%'}}/>
+                                <col span="1" style={{width: '30%'}}/>
+                                <col span="1" style={{width: '30%'}}/>
+                            </colgroup>
                             <tbody>
                                 <tr>
                                     <th>Produto</th>

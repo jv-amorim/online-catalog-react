@@ -14,25 +14,33 @@
 #cart-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    padding: 20px 0px 40px 0px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.342);
+    font-size: small;
     width: 60%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     #cart-content {
-        width: 90%;
-        font-size: small;
+        width: 95%;
     }
 }
 
 #cart-header {
     color: #202020;
+    margin-left: 20px;
 }
 
-.cart-button {
-    color: #aaa;
+.close-button {
+    margin-right: 15px;
+}
+
+.cart-button, 
+.close-button {
     float: right;
+    margin-right: 15px;
+    color: #aaa;
     font-size: 28px;
     font-weight: bold;
 }
@@ -46,6 +54,7 @@
 
 #cart-items {
     margin-top: 20px;
+    text-align: center;
 }
 
 #cart-items table {
@@ -55,6 +64,11 @@
 
 #cart-items .cart-item {
     color: #202020;
+}
+
+.cart-item-buttons {
+    margin-left: 5px;
+    float: none;
 }
 
 .cart-item-buttons .cart-button {
@@ -68,7 +82,7 @@
 }
 
 #whatsapp-container {
-    margin-top: 20px;
+    margin-top: 35px;
     text-align: center;
 }
 
@@ -93,6 +107,6 @@
 
 #whatsapp-button .icon {
     position: absolute;
-    top: 10px;
+    top: 9px;
     right: 7px;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Cart from '../Cart';
-import CatalogHeader from '../CatalogHeader';
-import CatalogBody from '../CatalogBody';
+import CatalogHeader from './CatalogHeader';
+import CatalogBody from './CatalogBody';
 
 import productsData from '../../data/products.json';
 import './stylesheet.css';
