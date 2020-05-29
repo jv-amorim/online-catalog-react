@@ -46,7 +46,9 @@
 }
 
 .cart-button:hover,
-.cart-button:focus {
+.cart-button:focus,
+.close-button:hover,
+.close-button:focus {
     color: #202020;
     text-decoration: none;
     cursor: pointer;
@@ -81,32 +83,24 @@
     font-weight: 700;
 }
 
-#whatsapp-container {
+#order-confirmation-container {
     margin-top: 35px;
     text-align: center;
 }
 
-#whatsapp-button {
-    text-decoration: none;
-    padding: 10px 40px 10px 10px;
-    background-color: rgb(25, 182, 46);
+#order-confirmation-button {
+    padding: 10px 20px;
+    background-color: rgb(25, 64, 182);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 5px 5px 5px 5px;
+    text-decoration: none;
     color: white;
     font-size: large;
-    width: 200px;
-    position: relative;
 }
 
-#whatsapp-button:hover {
-    background-color: rgb(7, 141, 25);
+#order-confirmation-button:hover {
+    background-color: rgb(13, 45, 143);
     cursor: pointer;
     transition: 0.5s;
-}
-
-#whatsapp-button .icon {
-    position: absolute;
-    top: 9px;
-    right: 7px;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Cart from '../Cart';
 import CatalogHeader from './CatalogHeader';
 import CatalogBody from './CatalogBody';
+import Cart from '../Cart';
+import AddressPanel from '../AddressPanel';
 
 import productsData from '../../data/products.json';
 import './stylesheet.css';
@@ -52,6 +53,7 @@ class Catalog extends React.Component {
                     increaseMethod={this.increaseProductAmount}     
                     decreaseMethod={this.decreaseProductAmount}     
                 />
+                <AddressPanel products={this.state.products} />
             </>
         );
     }

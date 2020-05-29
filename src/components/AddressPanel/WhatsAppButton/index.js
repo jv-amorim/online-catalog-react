@@ -2,12 +2,12 @@ import React from 'react';
 import GenerateOrderLinkForWhatsApp from './OrderLinkGenerator';
 import { FaWhatsapp } from 'react-icons/fa';
 
-function WhatsAppButton({ products }) {
+export default function WhatsAppButton({ products, address }) {
     return (
         <div id="whatsapp-container">
             <a 
                 id="whatsapp-button" 
-                href={GenerateOrderLinkForWhatsApp(products)}
+                onClick={() => SendOrderByWhatsApp(products, address)}
             >
                 Enviar o pedido 
                 <FaWhatsapp 
@@ -20,4 +20,7 @@ function WhatsAppButton({ products }) {
     );
 }
 
-export default WhatsAppButton;
+function SendOrderByWhatsApp(products, address) {
+    const link = GenerateOrderLinkForWhatsApp(products, address);
+    window.open(link,"_self");
+}

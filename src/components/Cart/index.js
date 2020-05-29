@@ -1,7 +1,5 @@
 import React from 'react';
-
-import CartItem from './CartItem';
-import WhatsAppButton from './WhatsAppButton'
+import CartTable from './CartTable';
 
 import { XCircle } from 'react-feather';
 import './stylesheet.css';
@@ -19,6 +17,12 @@ class Cart extends React.Component {
         cartElement.style.display = "none";
     }
 
+    openAddressPanel = () => {
+        this.closeCart();
+        const addressPanel = document.getElementById('address-panel');
+        addressPanel.style.display = "block";
+    }
+
     render() {
         return (
             <div id="cart-panel">
@@ -28,52 +32,17 @@ class Cart extends React.Component {
                         <h1>Carrinho</h1>
                     </div>
                     <div id="cart-items">
-                        <table>
-                            <colgroup>
-                                <col span="1" style={{width: '30%'}}/>
-                                <col span="1" style={{width: '15%'}}/>
-                                <col span="1" style={{width: '30%'}}/>
-                                <col span="1" style={{width: '30%'}}/>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th>Produto</th>
-                                    <th>Quant.</th>
-                                    <th>Preço</th>
-                                    <th>Ações</th>
-                                </tr>
-                                {this.products.map((product, i) => {
-                                    if (product.amount > 0) {
-                                        return (
-                                            <CartItem 
-                                                key={i}
-                                                productId={i}
-                                                product={product} 
-                                                increaseMethod={this.increaseMethod} 
-                                                decreaseMethod={this.decreaseMethod} 
-                                            />
-                                        );
-                                    }
-                                    return null;
-                                })}
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td>
-                                        {this.products.reduce((total, next) => {
-                                            return total + next.amount;
-                                        }, 0)}
-                                    </td>
-                                    <td className="total-price">
-                                        R$ {this.products.reduce((total, next) => {
-                                            return total + (next.price * next.amount);
-                                        }, 0)
-                                        .toLocaleString({currency: "BRL"})}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <CartTable 
+                            products={this.products} 
+                            increaseMethod={this.increaseMethod} 
+                            decreaseMethod={this.decreaseMethod} 
+                        />
                     </div>
-                    <WhatsAppButton products={this.products} />
+                    <div id="order-confirmation-container">
+                        <a id="order-confirmation-button" onClick={this.openAddressPanel}>
+                            Confirmar
+                        </a>
+                    </div>
                 </div>
             </div>
         );
